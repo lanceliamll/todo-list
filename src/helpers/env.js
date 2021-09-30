@@ -1,0 +1,1 @@
+export const API = "https://ial6ysksrb.execute-api.ap-southeast-2.amazonaws.com/prod";

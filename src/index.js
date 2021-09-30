@@ -3,6 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { initializeStore } from 'fluxible-js';
+
+function getInitialStore() {
+  return {
+    user: null
+  };
+}
+
+initializeStore({
+  initialStore: getInitialStore(),
+  persist: {
+    useJSON: false,
+    syncStorage: window.localStorage,
+    restore: savedStore => ({
+      user: savedStore.user
+    })
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
